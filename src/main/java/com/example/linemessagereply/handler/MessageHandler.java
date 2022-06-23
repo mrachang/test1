@@ -68,7 +68,7 @@ public class MessageHandler {
 			break;	
 			}
 			default :{
-				LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new TextMessage(text)}));
+				LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new TextMessage("抱歉我還看不懂這句話")}));
 			break;	
 			}
 			}
@@ -87,6 +87,10 @@ public class MessageHandler {
 				LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new StickerMessage("11537","52002752")}));
 				break;
 				
+			}
+			default :{
+				LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new TextMessage("抱歉我還看不懂這個貼圖")}));
+				break;
 			}
 			
 			}
