@@ -77,6 +77,19 @@ public class MessageHandler {
 		@Override
 		public void sticker(String replyToken, String packageId, String stickerId) {
 			System.out.printf("%s\t%s\n", replyToken, "sticker");
+			switch(stickerId) {
+			case "52002738":{
+				LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new StickerMessage("11537","52002738")}));
+				break;
+				
+			}
+			case "52002735":{
+				LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new StickerMessage("11537","52002752")}));
+				break;
+				
+			}
+			
+			}
 		}
 		
 		@Override
