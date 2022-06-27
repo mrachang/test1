@@ -5,7 +5,7 @@ import java.util.Arrays;
 import line.robot.message_object.BaseMessage;
 
 
-public class PushMessage extends BaseApiMessage{
+public class PushMessage {
 	private String to;
 	private BaseMessage[] messages;
 	

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import line.robot.message_object.BaseMessage;
 
 
-public class MulticastMessage extends BaseApiMessage{
+public class MulticastMessage {
 	private String[] to;
 	private BaseMessage[] messages;
 	
