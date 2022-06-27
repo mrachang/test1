@@ -34,11 +34,11 @@ public class RobotController {
 	
 	@GetMapping("/")
 	public ResponseEntity<String> test(){
-		return new ResponseEntity<String>("Hello J A V A", HttpStatus.OK);
+		return new ResponseEntity<>("測試", HttpStatus.OK);
 	}
 	
 	@PostMapping("/callback")
-	public ResponseEntity<String> messagingAPI(@RequestHeader("X-Line-Signature") String X_Line_Signature, @RequestBody String requestBody) throws UnsupportedEncodingException, IOException{
+	public ResponseEntity<String> messagingAPI(@RequestHeader("X-Line-Signature") String X_Line_Signature, @RequestBody String requestBody) {
         if(checkFromLine(requestBody, X_Line_Signature)) {
         	System.out.println("驗證通過");
         	JSONObject object = new JSONObject(requestBody);
@@ -47,10 +47,10 @@ public class RobotController {
         			messageHandler.doAction(object.getJSONArray("events").getJSONObject(i));
         		}
         	}
-            return new ResponseEntity<String>("OK", HttpStatus.OK);
+            return new ResponseEntity<>("OK", HttpStatus.OK);
         }
     	System.out.println("驗證不通過");
-        return new ResponseEntity<String>("Not line platform", HttpStatus.BAD_GATEWAY);
+        return new ResponseEntity<>("Not line platform", HttpStatus.BAD_GATEWAY);
 	}
 	
 	public boolean checkFromLine(String requestBody, String X_Line_Signature) {

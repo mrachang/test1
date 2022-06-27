@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 
 import com.example.linemessagereply.listener.MessageListener;
 
-import line.robot.message_object.BaseMessage;
-import line.robot.message_object.StickerMessage;
-import line.robot.message_object.TextMessage;
-import line.robot.message_object.api.ReplyMessage;
-import line.robot.message_object.http.LineConnector;
+import com.example.linemessagereply.message.BaseMessage;
+import com.example.linemessagereply.message.StickerMessage;
+import com.example.linemessagereply.message.TextMessage;
+import com.example.linemessagereply.message.ReplyMessage;
+import com.example.linemessagereply.connector.LineConnector;
 
 
 
