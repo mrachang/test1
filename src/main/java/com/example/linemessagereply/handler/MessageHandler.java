@@ -1,5 +1,6 @@
 package com.example.linemessagereply.handler;
 
+import line.robot.message_object.LocationMessage;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -27,6 +28,7 @@ public class MessageHandler {
 		case "text":
 			messageListener.text(event.getString("replyToken"), event.getJSONObject("message").getString("text"));
 			break;
+
 		case "image":
 			messageListener.image(event.getString("replyToken"), event.getJSONObject("message").getString("id"));
 			break;
@@ -47,7 +49,7 @@ public class MessageHandler {
 			break;
 	}
 	}
-	
+
 	private MessageListener messageListener = new MessageListener() {
 		
 		@Override
@@ -64,8 +66,12 @@ public class MessageHandler {
 			break;
 			}
 			case "哈囉":{
-				LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new TextMessage("哈囉你好"),new StickerMessage("446","1988")}));
+				LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new TextMessage("哈囉你好")}));
 			break;	
+			}
+			case "台中天氣":{
+					LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new TextMessage("今天台中天氣 https://www.cwb.gov.tw/V8/C/W/County/County.html?CID=66"),new StickerMessage("446","1988")}));
+					break;
 			}
 			default :{
 				LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new TextMessage("抱歉我還看不懂這句話")}));
