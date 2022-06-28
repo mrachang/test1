@@ -48,11 +48,11 @@ public class MessageHandler {
 			break;	
 			}
 			case "台中天氣":{
-					LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new TextMessage("今天台中天氣 https://www.cwb.gov.tw/V8/C/W/County/County.html?CID=66"),new StickerMessage("446","1988")}));
+					LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new TextMessage("今天台中天氣 https://www.cwb.gov.tw/V8/C/W/County/County.html?CID=66")}));
 					break;
 			}
 			case "台北天氣":{
-					LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new TextMessage("今天台北天氣 https://www.cwb.gov.tw/V8/C/W/County/County.html?CID=63"),new StickerMessage("446","1988")}));
+					LineConnector.getInstance().replyMessage(LINE_TOKEN, new ReplyMessage(replyToken, new BaseMessage[] {new TextMessage("今天台北天氣 https://www.cwb.gov.tw/V8/C/W/County/County.html?CID=63")}));
 					break;
 			}
 			default :{
